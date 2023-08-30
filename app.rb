@@ -3,10 +3,10 @@ require 'sinatra'
 # クイズの問題と正解
 quiz_data = [
   {
-    question: "Rubyの作者は誰ですか？",
-    choices: ["Yukihiro Matsumoto", "Linus Torvalds", "Larry Page"],
-    answer: 0
-  },
+    question: "いむくんの誕生日はいつ？",
+    choices: ["11/30", "11/16", "1/26"],
+    answer: 2
+  }
   {
     question: "HTMLは何の略ですか？",
     choices: ["Hyper Text Markup Language", "High Tech Modern Language", "How To Make Lasagna"],
