@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>クイズ</title>
+</head>
+<body>
+  <h1>クイズ</h1>
+  
+  <form id="quiz-form">
+    <div class="question">
+      <p>Q1: Rubyの作者は誰ですか？</p>
+      <label><input type="radio" name="q1" value="a">a) Yukihiro Matsumoto</label><br>
+      <label><input type="radio" name="q1" value="b">b) Linus Torvalds</label><br>
+      <label><input type="radio" name="q1" value="c">c) Larry Page</label><br>
+    </div>
+    
+    <div class="question">
+      <p>Q2: HTMLは何の略ですか？</p>
+      <label><input type="radio" name="q2" value="a">a) Hyper Text Markup Language</label><br>
+      <label><input type="radio" name="q2" value="b">b) High Tech Modern Language</label><br>
+      <label><input type="radio" name="q2" value="c">c) How To Make Lasagna</label><br>
+    </div>
+    
+    <div class="question">
+      <p>Q3: Rubyのファイル拡張子は何ですか？</p>
+      <label><input type="radio" name="q3" value="a">a) .rb</label><br>
+      <label><input type="radio" name="q3" value="b">b) .html</label><br>
+      <label><input type="radio" name="q3" value="c">c) .js</label><br>
+    </div>
+    
+    <input type="submit" value="提出">
+  </form>
+  
+  <div id="result"></div>
+  
+  <script>
+    const quizForm = document.getElementById("quiz-form");
+    const resultDiv = document.getElementById("result");
+    
+    quizForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      const answers = ["a", "a", "a"]; // 正解の選択肢
+      
+      let score = 0;
+      for (let i = 0; i < quizForm.elements.length - 1; i++) {
+        if (quizForm.elements[i].checked && quizForm.elements[i].value === answers[i]) {
+          score++;
+        }
+      }
+      
+      resultDiv.innerHTML = `スコア: ${score} / ${answers.length}`;
+    });
+  </script>
+</body>
+</html>
