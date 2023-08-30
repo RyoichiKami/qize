@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>クイズ</title>
+</head>
+<body>
+  <h1>クイズ</h1>
+  
+  <form action="/check" method="post">
+    <% quiz_data.each_with_index do |quiz, index| %>
+      <div class="question">
+        <p><%= quiz[:question] %></p>
+        <% quiz[:choices].each_with_index do |choice, choice_index| %>
+          <label>
+            <input type="radio" name="<%= index %>" value="<%= choice_index %>">
+            <%= choice %>
+          </label><br>
+        <% end %>
+      </div>
+    <% end %>
+    
+    <input type="submit" value="提出">
+  </form>
+</body>
+</html>
